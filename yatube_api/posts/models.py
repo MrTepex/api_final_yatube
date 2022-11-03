@@ -63,6 +63,6 @@ class Follow(models.Model):
                                   )
 
     class Meta:
-        unique_together = ('user', 'following',)
+        unique_together = [['user', 'following']]
 
 
