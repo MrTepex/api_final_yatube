@@ -1,5 +1,4 @@
 from django.shortcuts import get_object_or_404
-
 from rest_framework.filters import SearchFilter
 from rest_framework import viewsets
 from rest_framework.pagination import LimitOffsetPagination
@@ -48,7 +47,7 @@ class FollowViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated, ]
     pagination_class = LimitOffsetPagination
     filter_backends = (SearchFilter,)
-    search_fields = ('following__username',)
+    search_fields = (r'$following__username', r'$user__username')
 
     def get_queryset(self):
         return self.request.user.follower.all()
