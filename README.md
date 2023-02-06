@@ -111,3 +111,5 @@ python manage.py runserver
 "group": 0
 }
 ```
+## Автор
+- [Mikhail Terekhov](https://github.com/MrTepex)
